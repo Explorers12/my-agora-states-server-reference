@@ -28,4 +28,4 @@ jobs:
             --region ap-northeast-2 \
             build s3://fe-71-myeongin0926-s3 \
             --delete
-        working-directory: ./my-agora-states-client
+        working-directory: ./my-agora-states-client-react
