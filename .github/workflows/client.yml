@@ -13,7 +13,7 @@ jobs:
         run: npm install
         working-directory: ./my-agora-states-client-react
       - name: Build
-        run: npm run build
+        run: npm build
         working-directory: ./my-agora-states-client-react
       - name: SHOW AWS CLI VERSION
         run: |
@@ -24,5 +24,8 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_EC2_METADATA_DISABLED: true
         run: |
-          aws s3 sync ./my-agora-states-client-react/build s3://my-bucket --region ap-northeast-2 --delete
-          working-directory: ./my-agora-states-client-react
+          aws s3 sync \
+            --region ap-northeast-2 \
+            build s3://fe-71-myeongin0926-s3 \
+            --delete
+        working-directory: ./my-agora-states-client
