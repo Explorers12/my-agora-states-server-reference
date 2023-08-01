@@ -25,3 +25,4 @@ jobs:
           AWS_EC2_METADATA_DISABLED: true
         run: |
           aws s3 sync ./my-agora-states-client-react/build s3://my-bucket --region ap-northeast-2 --delete
+          working-directory: ./my-agora-states-client-react
